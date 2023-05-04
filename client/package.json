@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && sass src/scss/app.scss src/buildStyles/app.css",
+    "build": "concurrently \"npm run build-css\" \"next build\"",
     "lint": "next lint",
     "build-css": "sass -w --style=compressed src/scss/app.scss src/buildStyles/app.css",
     "start": "concurrently \"npm run build-css\" \"npm run dev\""
